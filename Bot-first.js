@@ -9,4 +9,4 @@ bot.on("message", function(message)
   bot.reply(message, "hello substitute");
  )
   ));
-  bot.loginWithToken("rubennthomass@gmail.com", "RtM20112003");
+  bot.loginWithToken("");
