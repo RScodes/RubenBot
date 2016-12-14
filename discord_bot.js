@@ -1450,4 +1450,4 @@ function init(){
   });
 }
 
-bot.login(ConfigFile.discord_email, ConfigFile.discord_password).then(init);
+  bot.loginWithToken("MjU4MTMxMzY3MDM5MjA1Mzc2.CzEzgg.uT0A4qL3lqty0G7kS8XxrcwmqE8");
