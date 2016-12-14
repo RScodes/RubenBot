@@ -16,3 +16,5 @@
 - [x] Integrate Cleverbot support, but restrict it to a certain channel.
 - [ ] Integrate a function to make DiscordBot stream music to a certain voice channel. (discord.js is being rewritten to support voice.)
 - [ ] Create a function to make DiscordBot create text/voice channels, but restrict it to a certain permission.
+- [ ] Add webhooks to discord to show when someone updates github
+
