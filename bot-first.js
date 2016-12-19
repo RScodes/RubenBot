@@ -1450,4 +1450,4 @@ function init(){
   });
 }
 
-  bot.loginWithToken("MjU4OTg2MjAxNjMxOTQ4ODEw");
+bot.loginWithToken("MjU4OTg2MjAxNjMxOTQ4ODEw");
