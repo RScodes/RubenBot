@@ -32,9 +32,8 @@ var aliases;
 var ext = [".jpg", ".jpeg", ".gif", ".png"];
 var imgDirectory = require("./config.json").image_folder;
 
-// Get the email and password
-var ConfigFile = require("./config.json");
-var qs = require("querystring");
+// Logging in the bot
+bot.loginWithToken("MjU4OTg2MjAxNjMxOTQ4ODEw");
 
 var htmlToText = require('html-to-text');
 
@@ -1450,4 +1449,4 @@ function init(){
   });
 }
 
-bot.loginWithToken("MjU4OTg2MjAxNjMxOTQ4ODEw");
+
