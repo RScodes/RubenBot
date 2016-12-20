@@ -1,4 +1,4 @@
 @echo off
 :boot
-node flexbot.js
+node bot-first.js
 goto boot
