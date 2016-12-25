@@ -55,3 +55,4 @@ start
 start 
 start 
 start crash 
+::this will not harm your pc in any way (usually)
