@@ -24,9 +24,9 @@ if %udefine%==1 goto ok
 if %udefine%==2 goto matrix
 if %udefine%==3 goto shutdown
 
-if %udefine%==e goto exit
-:exit
+if %udefine%==e (
 exit
+)
 :ok
 echo u wanna start the bot?
 pause
@@ -39,8 +39,6 @@ goto boot
 start node bot-first.js
 goto boot
 :matrix
-
-color 0a
 
 echo %random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%
 
