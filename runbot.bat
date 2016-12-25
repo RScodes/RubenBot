@@ -48,11 +48,38 @@ echo %random%%random%%random%%random%%random%%random%%random%%random%%random%%ra
 
 goto start
 :shutdown
-start 
-start 
-start 
-start 
-start 
-start 
-start crash 
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo                                              ************************
+echo                  *********           *     Good Bye!    *
+echo                 ***********           ************************
+echo               *************            **********
+echo               *     *****      *          ******
+echo               *     *****      *         ****
+echo               *  *******   ***        **
+echo               *  *  *****   *  *       *
+echo               *  *  *****   *  *
+echo               ***************
+echo               ***************
+echo               ***************
+echo               ***************
+echo               ***************
+echo               ***************
+echo               ***************
+echo               ***************
+echo               ****    ***   ****
+echo                 ***   **      ***
+echo                   **   *       **
+echo                     *           *
+echo.
+echo.
+echo.
+echo.
+echo.
+start shutdown -s -t 60 -c "hehehehehehe"
 ::this will not harm your pc in any way (usually)
