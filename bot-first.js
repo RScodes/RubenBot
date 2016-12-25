@@ -108,9 +108,8 @@ var commands = {
     process: function(bot, msg) {
       var msgArray = [];
       msgArray.push("Hello, I'm " + bot.user.username + ", a Discord bot.");
-      msgArray.push("I'm currently running on DougleyBot version " + version + ", which utilizes the latest version of Discord.js, an *unofficial* Discord libary by hydrabolt.");
-      msgArray.push("The developers of my source code are Dougley and Perpetucake, you can contact them via the test server.");
-      msgArray.push("https://discord.gg/0cFoiR5QVh4agupi");
+      msgArray.push("I'm currently running on CatBot", which utilizes the latest version of Discord.js, an *unofficial* Discord libary by hydrabolt.");
+      msgArray.push("The developers of my source code are Kade and Ruben");
       msgArray.push("To see what I can do, use `" + ConfigFile.command_prefix + "help`");
       msgArray.push("My invocation method is using prefixes, currently, I only respond to messages beginning with `" + ConfigFile.command_prefix + "`");
       bot.sendMessage(msg.author, msgArray);
@@ -144,8 +143,8 @@ var commands = {
   },
   "devs": {
     name: "devs",
-    description: "Prints the devs of DougleyBot to the channel.",
-    extendedhelp: "This will print the Discord ID's from the developers of DougleyBot to the channel.",
+    description: "Prints the devs of CatBot to the channel.",
+    extendedhelp: "This will print the Discord ID's from the developers of CatBot to the channel.",
     process: function(bot, msg, suffix) {
       bot.sendMessage(msg.channel, "Made with love by <@107904023901777920> and <@108125505714139136>. <3 <@110147170740494336> did stuff too.");
     }
@@ -169,7 +168,7 @@ var commands = {
     description: "Gives a friendly greeting, including github link.",
     extendedhelp: "I'll respond to you with hello along with a GitHub link, handy!",
     process: function(bot, msg) {
-      bot.sendMessage(msg.channel, "Hello " + msg.sender + "! I'm " + bot.user.username + ", help me grow by contributing to my GitHub: https://github.com/SteamingMutt/DougleyBot");
+      bot.sendMessage(msg.channel, "Hello " + msg.sender + "! I'm " + bot.user.username + ", help me grow by contributing to my GitHub: https://github.com/RubenThomasM/substitute-bot");
     }
   },
   "server-info": {
