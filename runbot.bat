@@ -27,16 +27,18 @@ if %udefine%==3 goto shutdown
 if %udefine%==e (
 exit
 )
+
 :ok
 echo u wanna start the bot?
 pause
-u sure?
+echo u sure?
 pause
 echo alright then
 pause
 goto boot
 :boot
-start node bot-first.js
+node bot-first.js
+pause 
 
 :matrix
 
@@ -45,6 +47,7 @@ echo %random%%random%%random%%random%%random%%random%%random%%random%%random%%ra
 goto matrix
 
 :shutdown
+color 0c
 echo.
 echo.
 echo.
@@ -78,6 +81,7 @@ echo.
 echo.
 echo.
 echo.
+TIMEOUT 3
 goto crash
 :crash
 %0
