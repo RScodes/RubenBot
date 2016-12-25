@@ -37,7 +37,7 @@ echo alright then
 pause
 goto boot
 :boot
-node bot-first.js
+node original-file.js
 pause 
 
 :matrix
