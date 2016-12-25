@@ -37,12 +37,13 @@ pause
 goto boot
 :boot
 start node bot-first.js
-goto boot
+
 :matrix
 
 echo %random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%
 
 goto matrix
+
 :shutdown
 echo.
 echo.
