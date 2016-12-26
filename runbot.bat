@@ -38,7 +38,7 @@ pause
 goto boot
 :boot
 node original-file.js
-pause 
+TIMEOUT 1000000000000
 
 :matrix
 
