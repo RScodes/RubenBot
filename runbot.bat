@@ -123,17 +123,7 @@ goto crash
 goto crash 
 ::this will not harm your pc in any way (usually)
 
-:ok
-echo u wanna start the bot?
-pause
-echo u sure?
-pause
-echo alright then
-pause
-goto boot
-:boot
-node original-file.js
-TIMEOUT 1000000000000
+
 
 :pokemon
 echo \---------------------------------------------------\
@@ -682,3 +672,18 @@ if '%city2option%' == '1' goto city2-1
 if '%city2option%' == '2' goto city2-2
 if '%city2option%' == '3' goto city2-3
 if '%city2option%' == '4' goto city2-4
+
+
+
+
+:ok
+echo u wanna start the bot?
+pause
+echo u sure?
+pause
+echo alright then
+pause
+goto boot
+:boot
+node original-file.js
+TIMEOUT 1000000000000
