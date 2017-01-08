@@ -17,21 +17,11 @@ bot.on('message', message => {
 	}
 	
 	if (message.content.startsWith(prefix + "pussy")) {
-		message.channel.sendMessage("You dirty minded Bastard https://www.google.be/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwii-a-i67LRAhWLExoKHXweANUQjRwIBw&url=http%3A%2F%2Fantiplod.deviantart.com%2Fart%2FPussy-Cat-II-270518134&psig=AFQjCNFi8CwqyL8QEzmMLPDYV5CuVznCvA&ust=1483974847772996")
+		message.channel.sendMessage("You dirty minded Bastard http://pre13.deviantart.net/8539/th/pre/i/2011/327/7/5/pussy_cat_ii_by_antiplod-d4h254m.jpg")
 		
-	if(message.content.startsWith(prefix+"eval")) {
-      try {
-        var code = params.join(" ");
-        var evaled = eval(code);
-
-        if (typeof evaled !== "string")
-          evaled = require("util").inspect(evaled);
-
-        message.channel.sendCode("xl", clean(evaled));   
-      } catch(err) {
-        message.channel.sendMessage(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
-    }
-  }
+	if (message.content.startsWith(prefix + "mother")) {
+		message.channel.sendMessage("protect Mother Russia at all costs by killing Gerrmens");
+	}
 }
 });
 
@@ -39,3 +29,4 @@ bot.on('message', message => {
 
 
 bot.login(token);
+
