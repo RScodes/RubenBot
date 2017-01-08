@@ -9,4 +9,4 @@ bot.on("message", function(message)
   bot.reply(message, "pongy");
  )
   ));
-bot.loginWithToken("MjU4MTMxMzY3MDM5MjA1Mzc2.CzEzgg.uT0A4qL3lqty0G7kS8XxrcwmqE8");
+bot.loginWithToken("MjU4MTMxMzY3MDM5MjA1Mzc2.C1PckQ.qlXu4yeqlo1FPnVarfiQ_b8SNLA");
