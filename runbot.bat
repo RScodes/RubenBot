@@ -139,7 +139,7 @@ pause
 
 :choosename
 cls
-echo Prof. Oak: It seems I don't remember your name. What is it?
+echo Prof. Oak: It seems I am a faggot and don't remember your name. What is it?
 set /p name=
 pause
 if '%name%' == '' goto choosename
