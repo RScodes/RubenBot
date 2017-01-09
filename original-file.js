@@ -26,6 +26,15 @@ bot.on('message', message => {
 	if (command === "mother") {
 		message.channel.sendMessage("protect Mother Russia at all costs by killing Gerrmens");
 	} else 
+	if (msg.content.startsWith(prefix + "perms")) {
+		let modRole = msg.guild.roles.find.("Owner", "Developer");
+    		if(msg.member.roles.has(modRole.id)) {
+   		 // Replys With Msg
+     		 msg.channel.sendMessage('Message');
+    	} else {
+     		 msg.reply("YOU FOOL! *You Dont Have Permission*")
+    }
+}	
 }
 });
 
