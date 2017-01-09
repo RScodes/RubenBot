@@ -1,19 +1,23 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
-const token = 'MjY3NjY1NzYzNTQyNzYxNDcz.C1PjAg.uqpAU7NMP8mmaISIkWkix8ODKQc';
+
+const config = require("./config.json");
 
 bot.on('ready',() => {
 	console.log('I am ready!');
 });
 
-const prefix = "??";
+bot.on("guildMemberAdd", member =>{
+	let guild = member.guild;
+	guild.default.channel.sendMessage("welcome " + member.user.username + " to the land of coding");
+});
 
 bot.on('message', message => {
 	if(message.author.bot) return;
-	if(!message.content.startsWith(prefix))return;
+	if(!message.content.startsWith(config.prefix))return;
 	
 	let command = message.content.split(" ")[0];
-	command = command.slice(prefix.length);
+	command = command.slice(config.prefix.length);
 	
 	let args = message.content.split(" ").slice(1);
 	
@@ -44,5 +48,5 @@ bot.on('message', message => {
 
 
 
-bot.login(token);
+bot.login(config.token);
 
