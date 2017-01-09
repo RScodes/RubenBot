@@ -7,9 +7,27 @@ bot.on('ready',() => {
 	console.log('I am ready!');
 });
 
+
+
 bot.on("guildMemberAdd", member =>{
 	let guild = member.guild;
-	guild.default.channel.sendMessage("welcome " + member.user.username + " to the land of coding");
+	guild.defaultChannel.sendMessage(`welcome ${member.user} to the land of coding`);
+});
+
+bot.on("guildCreate", guild => {
+	console.log(`New guild added : ${guild.name}, owned by ${guild.owner.user}`)      
+});
+
+bot.on("presenceUpdate", (oldMember, newMember) => {
+	let guild = newMember.guild;
+	let playRole = guild.roles.find("playing on the drums");
+	if(!playRole) return;
+	
+	if(newMember.user.presence.game && newMember.user.presence.game.name === "on the drums") {
+		newMember.addrole(playRole);
+	} else if(!newMember.user.presence.game && newMember.roles.has(playRole.id)) {
+		newMember.removeRole(playRole);
+	}
 });
 
 bot.on('message', message => {
