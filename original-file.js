@@ -59,8 +59,8 @@ bot.on('message', message => {
 	if (command === "mother") {
 		message.channel.sendMessage("protect Mother Russia at all costs by killing Gerrmens");
 	}
-}	
-}
+	
+
 });
 
 
