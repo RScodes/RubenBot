@@ -73,6 +73,36 @@ bot.on('message', message => {
    			 } catch(err) {
      		 	message.channel.sendMessage(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
    	 }
+	if (command === "gravityfalls"){
+		message.channel.sendMessage("https://tenor.co/xwJL.gif");
+	} 
+	if command === "purge")) {
+		let modRole = message.guild.roles.find("name", "ADMIN");
+		if(!message.member.roles.has(modRole.id)) {
+			return message.reply("pleb ur not admin")
+		}
+		let messagecount = parseInt(params[0]);
+		message.channel.fetchMessages({limit: messagecount})
+		.then(messages => message.channel.bulkDelete(messages));
+	}
+	if (command === "kick") {
+		let modRole = message.guild.roles.find("name", "ADMIN");
+		if(!message.member.roles.has(modRole.id)) {
+			return message.reply("pleb ur not admin")
+		}
+		if(message.mention.user.size === 0) {
+			return message.reply("please mention a user to kick");
+		}
+		let kickMember = message.guild.member(message.mentions.users.first());
+		if(!kickMember) {
+			return message.reply("that user dont exist bOi");
+		}
+		if(!message.guild.member(bot.user).hasPermission("KICK_MEMBERS")) {
+			return message.reply("i dont have the permission (KICK_MEMBER) to do this :sadface:")
+		}
+		kickMember.kick();
+	}
+
 
 });
 
