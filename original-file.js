@@ -59,24 +59,10 @@ bot.on('message', message => {
 	if (command === "mother") {
 		message.channel.sendMessage("protect Mother Russia at all costs by killing Gerrmens").catch(console.error);
 	}
-	if(command === "eval")) {
-		if(!msg.author.id === "226003765889597440") return;
-		} else {
-    			try {
-      			var code = params.join(" ");
-     		 	var evaled = eval(code);
-
-      			if (typeof evaled !== "string")
-       		 	evaled = require("util").inspect(evaled);
-
-     		 	message.channel.sendCode("xl", clean(evaled));   
-   			 } catch(err) {
-     		 	message.channel.sendMessage(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``).catch(console.error);
-   	 }
 	if (command === "gravityfalls"){
 		message.channel.sendMessage("https://tenor.co/xwJL.gif");
 	} 
-	if command === "purge")) {
+	if (command === "purge") {
 		let modRole = message.guild.roles.find("name", "ADMIN");
 		if(!message.member.roles.has(modRole.id)) {
 			return message.reply("pleb ur not admin").catch(console.error);
@@ -105,10 +91,28 @@ bot.on('message', message => {
 		}).catch(console.error)
 		}
 	}
-});
+	if (command === "eval") {
+		if(message.author.id !== "226003765889597440") return;
+		try {
+			var code = args.join(" ");
+			var evaled = eval(code);
 
+			if (typeof evaled !== "string")
+				evaled = require("util").inspect(evaled);
 
+			message.channel.sendCode("xl", clean(evaled));   
+		} catch(err) {
+		 	message.channel.sendMessage(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
+		}
+	}
+}); // END message handler
 
+function clean(text) {
+	if (typeof(text) === "string")
+		return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
+	else
+		return text;
+}
 
 bot.login(config.token);
 
