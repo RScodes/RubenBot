@@ -1,5 +1,3 @@
-## Substitute Bot
+## Faggot Alert Bot
 
-what do you need? node and thats it
-u need to install in command prompt:
-cleverbot, cleverbot-node, winston
+what do you need? node and pm2
