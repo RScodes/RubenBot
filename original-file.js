@@ -52,9 +52,14 @@ bot.on('message', message => {
 		});
 	}
 	if (command === "purge") {
-		let messagecount = parseInt(params[0]);
-		message.channel.fetchMessages({limit: messagecount})
-		.then(messages => message.channel.bulkDelete(messages));
+		var mcount = parseInt(params) ? parseInt(params[0]) : 1;
+		message.channel.fetchMessages({ limit: 100 })
+		.then(messages => {
+  		let msg_array = messages.array();
+ 		msg_array = msg_array.filter(m => m.author.id === client.user.id);
+		msg_array.length = mcount + 1;
+		msg_array.map(m => m.delete().catch(error => console.log(error.stack)));
+		});
 	}
 	if (command === "addrole") {
 		let modRole = message.guild.roles.find("name", "ADMIN");
