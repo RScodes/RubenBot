@@ -12,6 +12,11 @@ bot.on("guildMemberAdd", member =>{
 	guild.defaultChannel.sendMessage(`welcome ${member.user} to the land of coding`).catch(console.error);
 });
 
+bot.on("guildMemberRemove", member => {
+	let guild = member.guild;
+	guild.defaultChannel.sendMessage(`goodbye ${member.user}.`).catch(console.error);
+});
+
 bot.on("guildCreate", guild => {
 	console.log(`New guild added : ${guild.name}, owned by ${guild.owner.user}`).catch(console.error);      
 });
