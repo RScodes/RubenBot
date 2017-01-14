@@ -36,14 +36,21 @@ bot.on("presenceUpdate", (oldMember, newMember) => {
 bot.on('message', message => {
 	if(message.author.bot) return;
 	if(!message.content.startsWith(config.prefix))return;
-	
+	let channel = message.channel;
+	let guild = message.guild;
+	let text = message.content;
 	let command = message.content.split(" ")[0];
 	command = command.slice(config.prefix.length);
 	
 	let args = message.content.split(" ").slice(1);
 	
-	if (command === "ping"){
-		message.channel.sendMessage("Hello my faggot dude").catch(console.error);
+	 if (command == "ping") {
+		// msg.delete()
+		startTime = Date.now();
+		channel.sendMessage("Pinging...").then((msg) => {
+		endTime = Date.now();
+		msg.edit("Yes im on and its been **=>** *" + Math.round(endTime - startTime) + "* ms since you had to say ping");
+		});
 	}
 	if (command === "add") {
 		let numArray = args.map(n=> parseInt(n));
