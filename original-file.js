@@ -72,34 +72,20 @@ bot.on('message', message => {
 		
 		message.channel.sendMessage("https://github.com/rscodes/eeb2-bot").catch(console.error);
 	}
-	if(command === "prune") {
-		let modRole = message.guild.roles.find("name", "ADMIN");
-		let userToKick = message.mentions.users.first();
-		if(!message.member.roles.has(modRole.id)) {
-			return message.reply("pleb ur not admin").catch(console.error);
-		}
-		// get number of messages to prune
-		let messagecount = parseInt(params[0]);
-		// get the channel logs
-		message.channel.fetchMessages({limit: 100})
+	if (command == "purge") {
+		var amount = parseInt(args[1]);
+		msg.channel.fetchMessages({limit: amount})
 		.then(messages => {
-		let msg_array = messages.array();
-		// filter the message to only your own
-		msg_array = msg_array.filter(m => m.author.id === bot.user.id);
-		// limit to the requested number + 1 for the command message
-		msg_array.length = messagecount + 1;
-		// Has to delete messages individually. Cannot use `deleteMessages()` on selfbots.
-		msg_array.map(m => m.delete().catch(console.error));
-		});
-	}
-	if (command === "purge") {
-		var mcount = parseInt(params) ? parseInt(params[0]) : 1;
-		message.channel.fetchMessages({ limit: 100 })
-		.then(messages => {
-  		let msg_array = messages.array();
- 		msg_array = msg_array.filter(m => m.author.id === client.user.id);
-		msg_array.length = mcount + 1;
-		msg_array.map(m => m.delete().catch(error => console.log(error.stack)));
+			messages.map(msg => msg.delete().catch(console.error) );
+		}).catch(console.error);
+	} else if (command == "clear") { //p delets your messages. purge deletes everyones messages.
+			let delamount = parseInt(args[1]) ? parseInt(args[1]) : 1;
+			msg.channel.fetchMessages({limit: 100})
+			.then(messages => {
+				msgar = messages.array();
+				msgar = msgar.filter(msg => msg.author.id === bot.user.id);
+				msgar.length = delamount + 1;
+				msgar.map(msg => msg.delete().catch(console.error));
 		});
 	}
 	if (command === "addrole") {
