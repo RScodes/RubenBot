@@ -72,13 +72,6 @@ goto crash
 
 
 :ok
-echo u wanna start the bot?
-pause
-echo u sure?
-pause
-echo alright then
-pause
-goto boot
-:boot
+echo connecting.....
 CMD /k node original-file.js
-TIMEOUT 1000000000000
+TIMEOUT 100000000000
