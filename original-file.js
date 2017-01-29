@@ -70,20 +70,6 @@ bot.on('message', message => {
 		
 		message.channel.sendMessage(total).catch(console.error);
 	}
-	if (command === "say"){
-		message.channel.sendMessage(args.join(" ")).catch(console.error);
-	}
-	if (command === "pussy") {
-		message.channel.sendMessage("You dirty minded Bastard http://pre13.deviantart.net/8539/th/pre/i/2011/327/7/5/pussy_cat_ii_by_antiplod-d4h254m.jpg").catch(console.error);
-	}	
-		
-	if (command === "mother") {
-		message.channel.sendMessage("protect Mother Russia at all costs by killing Gerrmens").catch(console.error);
-	}
-	if (command === "giveme"){
-		
-		message.channel.sendMessage("https://github.com/rscodes/eeb2-bot").catch(console.error);
-	}
 	if (command == "purge") {
 		var amount = parseInt(args[1]);
 		msg.channel.fetchMessages({limit: amount})
@@ -116,9 +102,6 @@ bot.on('message', message => {
 	if (command === "say"){
 		message.channel.sendMessage(args.join(" ")).catch(console.error);
 	}
-	if (command === "gravityfalls"){
-		message.channel.sendMessage("https://tenor.co/xwJL.gif");
-	} 
 	if (command === "purge") {
 		let modRole = message.guild.roles.find("name", "ADMIN");
 		if(!message.member.roles.has(modRole.id)) {
@@ -146,7 +129,6 @@ bot.on('message', message => {
 		kickMember.kick().then(member => {
 			message.reply(`${member.user.username} was kicked.`).catch(console.error);
 		}).catch(console.error)
-		}
 	}
 	if (command === "eval") {
 		if(message.author.id !== "226003765889597440") return;
