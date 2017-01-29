@@ -21,18 +21,6 @@ bot.on("guildCreate", guild => {
 	console.log(`New guild added : ${guild.name}, owned by ${guild.owner.user}`).catch(console.error);      
 });
 
-bot.on("presenceUpdate", (oldMember, newMember) => {
-	let guild = newMember.guild;
-	let playRole = guild.roles.find("playing on the drums");
-	if(!playRole) return;
-	
-	if(newMember.user.presence.game && newMember.user.presence.game.name === "on the drums") {
-		newMember.addrole(playRole).catch(console.error);
-	} else if(!newMember.user.presence.game && newMember.roles.has(playRole.id)) {
-		newMember.removeRole(playRole).catch(console.error);
-	}
-});
-
 bot.on('message', message => {
 	if(message.author.bot) return;
 	if(!message.content.startsWith(config.prefix))return;
