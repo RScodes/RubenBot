@@ -32,26 +32,6 @@ bot.on('message', message => {
 	
 	let args = message.content.split(" ").slice(1);
 	
-	 if (command == "ping") {
-		// msg.delete()
-		startTime = Date.now();
-		channel.sendMessage("Pinging...").then((msg) => {
-		endTime = Date.now();
-		msg.edit("Yes im on and its been **=>** *" + Math.round(endTime - startTime) + "* ms since you had to say ping");
-		});
-	}
-	if (command === 'embed') {
-		let modRole = message.guild.roles.find("name", "ADMIN");
-		if(!message.member.roles.has(modRole.id)) {
-			return message.reply("pleb ur not admin").catch(console.error);
-		}
-		let args = message.content.split(" ").slice(1);
-		let text = args[0];
-		message.channel.sendEmbed({
-			color: 0xFFFFFF,
-			title: args.join(`${text}`),
-		});
-	}
 	if (command === "add") {
 		let numArray = args.map(n=> parseInt(n));
 		let total = numArray.reduce( (p, c) => p+c);
