@@ -32,18 +32,11 @@ bot.on('message', message => {
 	
 	let args = message.content.split(" ").slice(1);
 	
-	if (command === "add") {
-		let numArray = args.map(n=> parseInt(n));
-		let total = numArray.reduce( (p, c) => p+c);
-		
-		message.channel.sendMessage(total).catch(console.error);
-	}
+	let commandFile = require(`./commands/${command}.js`);
+	commandFile.run(bot, message, args);
+	
 	if (command == "purge") {
-		var amount = parseInt(args[1]);
-		msg.channel.fetchMessages({limit: amount})
-		.then(messages => {
-			messages.map(msg => msg.delete().catch(console.error) );
-		}).catch(console.error);
+		
 	} else if (command == "clear") { //p delets your messages. purge deletes everyones messages.
 			let delamount = parseInt(args[1]) ? parseInt(args[1]) : 1;
 			msg.channel.fetchMessages({limit: 100})
