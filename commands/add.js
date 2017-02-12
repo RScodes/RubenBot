@@ -3,4 +3,4 @@ exports.run = (bot, message, args) => {
 	let total = numArray.reduce( (p, c) => p+c);
 		
 	message.channel.sendMessage(total).catch(console.error);
-}
+};
