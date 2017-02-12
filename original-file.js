@@ -21,6 +21,10 @@ bot.on("guildCreate", guild => {
 	console.log(`New guild added : ${guild.name}, owned by ${guild.owner.user}`).catch(console.error);      
 });
 
+bot.on('reconnecting', () => {
+	console.log(`recconecting at ${new Date()}`);
+});
+
 bot.on('message', message => {
 	if(message.author.bot) return;
 	if(!message.content.startsWith(config.prefix))return;
