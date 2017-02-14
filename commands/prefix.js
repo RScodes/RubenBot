@@ -1,6 +1,10 @@
 exports.run = (bot, message, args) => {
-  // get arguments for the command, as: !prefix +
-  let args = msg.content.split(" ").slice(1);
+  let modRole = message.guild.roles.find("name", "ADMIN");
+	let userToKick = message.mentions.users.first();
+	if(!message.member.roles.has(modRole.id)) {
+		return message.reply("pleb ur not admin").catch(console.error);
+	}
+  let args = message.content.split(" ").slice(1);
   // change the configuration in memory
   config.prefix = args[0];
 
